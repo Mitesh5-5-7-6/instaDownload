@@ -58,7 +58,14 @@ const DebuggerComponent = () => {
           url = `${API_BASE_URL}/api/instagram-profile?username=${cleanUsername}`;
       }
 
-      const response = await fetch(url);
+      // In your frontend code, update your fetch calls:
+      const response = await fetch(url, {
+        method: 'GET',
+        credentials: 'include', // This is important when using credentials: true in CORS
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}));
