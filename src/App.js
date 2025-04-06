@@ -8,7 +8,7 @@ const DebuggerComponent = () => {
   const [activeEndpoint, setActiveEndpoint] = useState('profile');
 
   // API base URL
-  const API_BASE_URL = 'http://localhost:5000';
+  const API_BASE_URL = 'https://node-proxy-server-1-o9k5.onrender.com';
 
   // Extract username from potential full URL
   const extractUsername = (input) => {
